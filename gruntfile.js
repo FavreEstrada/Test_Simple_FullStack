@@ -33,8 +33,10 @@ module.exports = function(grunt) {
         }
       },
       css: {
-        src: ['app/css/{,*/}*.css', 'app/directives/{,*/}*.css'],
-        dest: 'style.css'
+        files: {
+          'style.css': ['app/css/{,*/}*.css', 'app/directives/{,*/}*.css'],
+          'bootstrap.css': 'bower_components/bootstrap/dist/css/bootstrap.min.css'
+        }
       }
     },
     jshint: {
@@ -79,7 +81,7 @@ module.exports = function(grunt) {
       main: {
         files: [{
           expand: true,
-          src: ['app/pages/**', 'app/fonts/*', 'app/directives/*.html', 'bower_components/bootstrap/dist/css/bootstrap.min.css', 'server/*', 'app.js', 'index.js', 'libs.js', 'style.css', 'index.html'],
+          src: ['app/pages/**', 'app/fonts/*', 'app/directives/*.html', 'server/*', 'app.js', 'index.js', 'libs.js', '*.css', 'index.html'],
           dest: 'dist/.'
         }],
       },
