@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test</title>
+		<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="libs.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body ng-app="test" ng-controller="indexCtrl">
+		<div class="container-fluid">
+			<div class="row product-wrapper no-gutters">
+				<div class="loader-wrapper" ng-if="isLoading">
+					<div class="loader"></div>
+				</div>
+				<h3 class="col-6">Products</h3>
+				<div class="col-6">
+					<div class="form-group text-right">
+						<label class="label-control">Sort By</label>
+						<select class="form-control col-4" ng-model="sortBy" ng-change="changeSort()" ng-options="filter for filter in sortOptions"></select>
+					</div>
+				</div>
+				<div class="product-box row" when-scroll-ends="nextPage()">
+					<div class="col-sm-2 col-md-4 col-lg-4" ng-repeat="product in products track by $index">
+						<div class="tile">
+							<div class="prod-display text-center">{{product.image}}</div>
+							<div class="price"><label>Price: </label>{{product.price | currency}}</div>
+							<div class="size"><label>Size: </label>{{product.size}}</div>
+							<div class="date"><label>Date added: </label>{{processDate(product.date)}}</div>
+						</div>
+						
+					</div>
+					<div class="col-sm-12 text-center" ng-if="response.maxPage === page">End of Catalog</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
