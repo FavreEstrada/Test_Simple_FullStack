@@ -1,3 +1,8 @@
 node_modules/
 bower_components/
 .DS_Store
+package-lock.json
+app.js
+app.js.map
+libs.js
+style.css
