@@ -16,5 +16,6 @@
 - Start server with **_node index.js_**
 
 ### For deployment: 
+- Follow **For development** instructions til step 3.
 -  To produce dist folder, instead of running **_grunt dev_** run grunt task **_grunt_deploy_**
 -  Run **_npm start_**
