@@ -7,6 +7,7 @@
 - Install NodeJS
 - Install dependencies running **_npm install --production_**
 -  Run **_npm start_**
+- Open **localhost:8080** in browser
 
 ### For development:
 - Install NodeJS
@@ -14,6 +15,7 @@
 - Install libraries **_bower install_**
 - Start grunt task to compile, concat, and generate files required with **_grunt dev_**
 - Start server with **_node index.js_**
+- Open **localhost:8080** in browser
 
 ### For deployment: 
 - Follow **For development** instructions til step 3.
